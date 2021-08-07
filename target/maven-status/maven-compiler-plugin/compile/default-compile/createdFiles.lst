@@ -1,1 +1,7 @@
-com/tempVar/tempVarServer/TempVarServerApplication.class
+com/tempVar/GeoHelp/APIs/returnDTOs/returnDTO.class
+com/tempVar/GeoHelp/database/entities/PostInfo.class
+com/tempVar/GeoHelp/database/repositories/PostInfoRepository.class
+com/tempVar/GeoHelp/GeoHelpServerApplication.class
+com/tempVar/GeoHelp/database/entities/PostDetail.class
+com/tempVar/GeoHelp/database/repositories/PostDetailRepository.class
+com/tempVar/GeoHelp/APIs/controllers/ViewerController.class
