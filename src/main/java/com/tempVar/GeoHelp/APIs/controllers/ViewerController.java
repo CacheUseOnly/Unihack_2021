@@ -1,8 +1,7 @@
 package com.tempVar.GeoHelp.APIs.controllers;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.tempVar.GeoHelp.APIs.returnDTOs.returnDTO;
+import com.tempVar.GeoHelp.APIs.returnDTOs.viewerReturnDTO;
 import com.tempVar.GeoHelp.database.entities.PostDetail;
 import com.tempVar.GeoHelp.database.entities.PostInfo;
 import com.tempVar.GeoHelp.database.repositories.PostDetailRepository;
@@ -20,7 +19,7 @@ import java.util.Vector;
 
 @Slf4j
 @Controller
-@RequestMapping(path="/viewer")
+@RequestMapping(path = "/viewer")
 public class ViewerController {
 
     @Autowired
@@ -56,7 +55,7 @@ public class ViewerController {
             status = 9;
         }
 
-        returnDTO ret = new returnDTO(status, msg, result);
+        viewerReturnDTO ret = new viewerReturnDTO(status, msg, result);
         return JSONObject.toJSONString(ret);
     }
 
@@ -78,7 +77,7 @@ public class ViewerController {
             status = 9;
         }
 
-        returnDTO ret = new returnDTO(status, msg, res.get(0));
+        viewerReturnDTO ret = new viewerReturnDTO(status, msg, res.get(0));
         return JSONObject.toJSONString(ret);
     }
 }

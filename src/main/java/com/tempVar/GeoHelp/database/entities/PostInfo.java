@@ -6,8 +6,8 @@ import java.io.Serializable;
 @Entity
 public class PostInfo implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "post_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "post_id", insertable = false)
     private long post_id;
 
     @Column(name = "longitude")
