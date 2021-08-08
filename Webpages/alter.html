@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="//d2d3qesrx8xj6s.cloudfront.net/favicon.ico">
+    <title>GeoHelp</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://bootsnipp.com/bootstrap-builder/css/editor.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://bootsnipp.com/bootstrap-builder/demo/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/contact-form-20/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/contact-form-20/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://preview.colorlib.com/theme/bootstrap/contact-form-20/css/style.css">
+</head>
+<style>
+    .sightbead {
+        position: relative;
+        top: 10rem;
+        z-index: 10;
+    }
+
+    .jumbotron {
+        text-align: center;
+        border-bottom: .01rem solid #e5e5e5;
+        padding: 1rem 1rem;
+    }
+
+    .container {
+        max-width: 85%;
+        max-height: 35%;
+    }
+</style>
+
+<body onload="moveOnfunc()">
+    <div class="container" style="border-width: 0px; border-color: rgb(66, 133, 244); border-image: initial;">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="col-4">
+                    <h1 style="font-family: 'Lucida Sans Unicode'; font-weight: 300; text-decoration-line: underline;">
+                        GeoHelp
+                    </h1>
+                </div>
+            </div>
+            <div class="col-sm-4 col-5"></div>
+            <div class="col-sm-4">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button id="search_button" type="button" class="btn btn-secondary"
+                        style="background-color: rgb(233, 152, 39);">
+                        Search
+                    </button>
+                    <button id="post_button" onclick="newPost()" href="#bottom" type="button" class="btn btn-secondary"
+                        style="background-color: rgb(46, 140, 235);left: 1rem;">
+                        New Post
+                    </button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron" style="width: 100%; height: 40%;align-self: center;">
+            <div id="containerMap" style="height:30rem;min-width:40rem;position:relative;align-self:center;">
+                <img src="Blank diagram.png" width="150" height="150" class="sightbead" alt="sightbead" />
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+    <div class="container">
+        <div class="m-5">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Need help</h4>
+                            <p class="card-text">Here's the content</p>
+                            <p class="card-text">contact me</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text" id="location"></p>
+                            <p class="card-text">13246821667</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Meaningful title</h4>
+                            <p class="card-text">Rich content</p>
+                            <p class="card-text">no contact</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4 col-5"></div>
+                <div class="col-sm-4"></div>
+            </div>
+        </div>
+    </div>
+    <div id="input_form" class="content" style="display: none;">
+        <div class="container">
+            <div class="row align-items-stretch justify-content-center no-gutters">
+                <div class="col-md-7">
+                    <div class="form h-100 contact-wrap p-5">
+                        <h3 class="text-center">New Post</h3>
+                        <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Title *</label>
+                                    <input type="text" class="form-control" name="title" id="title"
+                                        placeholder="Shout to the world" required="required">
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label">Contact Type</label>
+                                    <select type="text" class="form-control" name="contact_type" id="contact_type">
+                                        <option value="" selected disabled>-- Select contact type --</option>
+                                        <option>Phone</option>
+                                        <option>Email</option>
+                                        <option>WeChat</option>
+                                        <option>Weibo</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group mb-3">
+                                    <label for="" class="col-form-label">Contact</label>
+                                    <input type="text" class="form-control" name="contact" id="contact"
+                                        placeholder="How to reach you">
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-md-12 form-group mb-3">
+                                    <label for="message" class="col-form-label">Message *</label>
+                                    <textarea class="form-control" name="message" id="message" cols="30" rows="4"
+                                        placeholder="Write your message"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-5 form-group text-center">
+                                    <input type="submit" value="Post"
+                                        class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                                    <span class="submitting"></span>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="form-message-warning mt-4"></div>
+                        <div id="form-message-success">
+                            Your post was published!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=e6528379c72d78afa3bbe3f6598e5516"></script>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+    <script type="text/javascript">
+        //初始化地图对象，加载地图
+        var map = new AMap.Map("containerMap", {
+            resizeEnable: true
+        });
+        var logMapinfo = function () {
+            var zoom = map.getZoom(); //获取当前地图级别
+            var center = map.getCenter(); //获取当前地图级别
+            console.log(zoom.toString());
+            document.getElementById("location").innerText = center.toString();
+            if (map.getZoom() == 18) { // 3
+                console.log("0.000526")
+            }
+            if (map.getZoom() == 17) { // 4
+                console.log("0.001041")
+            }
+            if (map.getZoom() == 16) { // 5
+                console.log("0.00206")
+            }
+            if (map.getZoom() == 15) { // 6
+                console.log("0.004377")
+            }
+            if (map.getZoom() == 14) { // 7
+                console.log("0.008326")
+            }
+            if (map.getZoom() == 13) { // 8
+                console.log("0.016822")
+            }
+            if (map.getZoom() == 12) { // 9
+                console.log("0.031929")
+            }
+            if (map.getZoom() == 11) { // 10
+                console.log("0.065227")
+            }
+            if (map.getZoom() == 10) { // 11
+                console.log("0.134575")
+            }
+            if (map.getZoom() == 9) { // 12
+                console.log("0.269165")
+            }
+            if (map.getZoom() == 8) { // 14
+                console.log("0.55481")
+            }
+            if (map.getZoom() == 7) { // 15
+                console.log("1.10962")
+            }
+            if (map.getZoom() == 6) { // 16
+                console.log("2.21924")
+            }
+            if (map.getZoom() == 5) { // 17
+                console.log("4.43848")
+            }
+            if (map.getZoom() == 4) { // 18
+                console.log("8.87696")
+            }
+            if (map.getZoom() == 3) { // 18
+                console.log("17.75392")
+            }
+        };
+        logMapinfo();
+
+        function mapMovestart() {
+            // document.querySelector("#text").innerText = '地图移动开始';
+        }
+        function mapMove() {
+            logMapinfo();
+            // document.querySelector("#text").innerText = '地图正在移动';
+        }
+        function mapMoveend() {
+            // document.querySelector("#text").innerText = '地图移动结束';
+        }
+        // 事件绑定
+        function moveOnfunc() {
+            log.success("欢迎！");
+            map.on('movestart', mapMovestart);
+            map.on('mapmove', mapMove);
+            map.on('moveend', mapMoveend);
+        }
+
+        function moveOnfunc2() {
+            log.success("继续");
+            map.on('movestart', mapMovestart);
+            map.on('mapmove', mapMove);
+            map.on('moveend', mapMoveend);
+        }
+
+        function newPost() {
+            document.getElementById("input_form").style.display = "";
+            $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        }
+        // 解绑事件
+        function moveOfffunc() {
+            log.success("自由浏览模式!");
+            map.off('movestart', mapMovestart);
+            map.off('mapmove', mapMove);
+            map.off('moveend', mapMoveend);
+        }
+        // 给按钮绑定事件
+        // document.getElementById("moveOn").onclick = moveOnfunc2;
+        // document.getElementById("moveOff").onclick = moveOfffunc;
+        document.getElementById("post_button").onClick = newPost;
+    </script>
+
+    <script src="https://preview.colorlib.com/theme/bootstrap/contact-form-20/js/jquery-3.3.1.min.js"></script>
+    <script src="https://preview.colorlib.com/theme/bootstrap/contact-form-20/js/popper.min.js"></script>
+    <script src="https://preview.colorlib.com/theme/bootstrap/contact-form-20/js/bootstrap.min.js"></script>
+    <script src="https://preview.colorlib.com/theme/bootstrap/contact-form-20/js/jquery.validate.min.js"></script>
+    <script src="https://preview.colorlib.com/theme/bootstrap/contact-form-20/js/main.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"rayId":"67b2588e88de3104","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.7.0","si":10}'></script>
+</body>
+
+</html>

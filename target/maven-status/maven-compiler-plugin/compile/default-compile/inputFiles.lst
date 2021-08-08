@@ -1,9 +1,0 @@
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/APIs/returnDTOs/posterReturnDTO.java
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/GeoHelpServerApplication.java
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/APIs/returnDTOs/viewerReturnDTO.java
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/APIs/controllers/PosterController.java
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/database/entities/PostDetail.java
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/database/entities/PostInfo.java
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/database/repositories/PostInfoRepository.java
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/APIs/controllers/ViewerController.java
-/home/cache/IdeaProjects/Unihack_2021/src/main/java/com/tempVar/GeoHelp/database/repositories/PostDetailRepository.java
