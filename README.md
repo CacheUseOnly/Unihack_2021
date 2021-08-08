@@ -1,7 +1,13 @@
 # Unihack_2021 tempVar group
 
 ## Introduction
-This is a placeholder
+Help other or get help base on geolocation
 
-## Reference
-Do we really need this??
+## Technology
+### Backend
+- Springboot
+- MySQL
+### Frontend
+- Ajax
+- Amap API
+- Bootstrap
