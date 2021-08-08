@@ -355,7 +355,8 @@
                     },
                     error: function (jqxhr) {
                         console.log(jqxhr)
-                    }
+                    },
+                    async:false
                 });
             }
 
@@ -364,6 +365,7 @@
 
         async function updateCards() {
             await queryPostDetail();
+            console.log("updateCards() called")
             // update the cards
             if (length == 0) {
                 document.getElementById("header1").innerHTML = "no post";
